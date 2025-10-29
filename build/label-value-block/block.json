@@ -1,0 +1,107 @@
+{
+  "apiVersion": 3,
+  "name": "lsx/label-value-group",
+  "version": "0.1.0",
+  "title": "Label/Value Group",
+  "category": "layout",
+  "icon": "align-left",
+  "description": "Group-like wrapper that aligns/wraps .value relative to .label. Adjustable label width, gap and padding.",
+  "keywords": [
+    "label",
+    "value",
+    "wrap",
+    "align",
+    "group"
+  ],
+  "textdomain": "lsx-label-value-group",
+  "supports": {
+    "anchor": true,
+    "className": true,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "padding": true,
+      "margin": true,
+      "blockGap": true
+    },
+    "color": {
+      "background": true,
+      "text": true,
+      "link": true
+    },
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true
+    }
+  },
+  "attributes": {
+    "mode": {
+      "type": "string",
+      "default": "wrap-under"
+    },
+    "labelWidth": {
+      "type": "string",
+      "default": "12rem"
+    },
+    "gap": {
+      "type": "string",
+      "default": "var(--wp--preset--spacing--10)"
+    },
+    "padLeft": {
+      "type": "string",
+      "default": "0"
+    },
+    "padRight": {
+      "type": "string",
+      "default": "0"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "editorStyle": "file:./index.css",
+  "example": {
+    "attributes": {
+      "mode": "wrap-under",
+      "labelWidth": "12rem",
+      "gap": "1rem"
+    },
+    "innerBlocks": [
+      {
+        "name": "core/group",
+        "attributes": {
+          "className": "label",
+          "layout": {
+            "type": "default"
+          }
+        },
+        "innerBlocks": [
+          {
+            "name": "core/paragraph",
+            "attributes": {
+              "content": "<strong>Label:</strong>"
+            }
+          }
+        ]
+      },
+      {
+        "name": "core/group",
+        "attributes": {
+          "className": "value",
+          "layout": {
+            "type": "default"
+          }
+        },
+        "innerBlocks": [
+          {
+            "name": "core/paragraph",
+            "attributes": {
+              "content": "A long value that will wrap under the label when it overflows the first line."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
